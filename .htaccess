@@ -1,0 +1,9 @@
+RewriteEngine On
+
+RewriteBase /flycar/
+
+RewriteRule ^([a-z]+)/([a-z\-]+)\/?$ /flycar/index.php?controleur=$1&action=$2&%{QUERY_STRING} [L]
+
+RewriteRule ^([a-z]+)/([a-z\-]+)/([0-9]+)\/?$ /flycar/index.php?controleur=$1&action=$2&id=$3&%{QUERY_STRING} [L]
+
+RewriteRule ^([a-z]+)\/?$ /flycar/index.php?controleur=$1&%{QUERY_STRING} [L]
